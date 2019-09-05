@@ -4,14 +4,29 @@
 }
 @model MediaMonitor.Application.DtoObjects.MovieDto
 
-    <div style="display:flex;justify-content:space-around;align-items:flex-start">
-        <div style="flex-grow:2;padding-right:1em">
-            <h1>@Model.LocalTitle</h1>
-            <p>@Model.DescriptionLong</p>
-            <h4>Written by @Model.Writer</h4>
-            <h4>Directed by @Model.Director</h4>
-        </div>
-        <div style="flex-grow:1;padding-left:1em">
-            <img src="@Model.Thumbnail" />
+<div class="inner-nav">
+    <a asp-action="Index" class="btn btn-primary"><span class="glyphicon glyphicon-chevron-left"></span> Back</a>
+</div>
+
+<div class="movie-container">
+    <div>
+        <h1>@Model.LocalTitle</h1>
+        <p>@Model.DescriptionLong</p>
+
+        <span class="credit"><strong>Written by</strong> @Model.Writer</span>
+        <span class="credit"><strong>Directed by</strong> @Model.Director</span>
+
+        @*<span class="rating">@Model.Userrating</span>*@
+        <div class="rating-container">
+            <span><strong>User rating: </strong></span>
+            
+            @for (int i = 0; i < Model.Userrating; i++)
+            {
+                <img src="https://upload.wikimedia.org/wikipedia/commons/2/29/Gold_Star.svg" />
+            }
         </div>
     </div>
+    <div>
+        <img src="@Model.Thumbnail" />
+    </div>
+</div>

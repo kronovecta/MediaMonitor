@@ -19,6 +19,7 @@ namespace MediaMonitor.Infrastructure
                 .ForMember(x => x.Thumbnail, opt => opt.MapFrom(src => src.C08))
                 .ForMember(x => x.IMDB_ID, opt => opt.MapFrom(src => src.C09))
                 .ForMember(x => x.RunTime, opt => opt.MapFrom(src => src.C11))
+                .ForMember(x => x.Rating, opt => opt.MapFrom(src => src.C12))
                 .ForMember(x => x.Genre, opt => opt.MapFrom(src => src.C14))
                 .ForMember(x => x.Director, opt => opt.MapFrom(src => src.C15))
                 .ForMember(x => x.Studio, opt => opt.MapFrom(src => src.C18))
