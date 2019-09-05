@@ -1,0 +1,15 @@
+﻿
+@{
+    ViewData["Title"] = "Details";
+}
+@model MediaMonitor.Application.DtoObjects.MovieDto
+
+    <div style="display:flex;justify-content:space-around;align-items:center">
+        <div>
+            <h1>@Model.LocalTitle</h1>
+            <p>@Model.DescriptionLong</p>
+        </div>
+        <div>
+            <img src="@Model.Thumbnail" />
+        </div>
+    </div>

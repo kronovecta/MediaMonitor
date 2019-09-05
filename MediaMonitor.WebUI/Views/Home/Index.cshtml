@@ -1,0 +1,16 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+@model MediaMonitor.Application.Queries.Movies.GetAllMoviesResponse
+
+<div>
+    <ul>
+        @foreach (var movie in Model.Movies)
+        {
+            <li>@movie.LocalTitle</li>
+            @*<a href=""><img src="@movie.Thumbnail" /></a>*@
+            <a asp-route-id="@movie.IdMovie" asp-controller="Home" asp-action="Details"><img src="@movie.Thumbnail" /></a> 
+        }
+    </ul>
+</div>
